@@ -1,8 +1,8 @@
 
 var mysql = require('mysql');
+const data = require('./data');
 
-
-var con = mysql.createConnection({
+var connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "a",
@@ -11,7 +11,7 @@ var con = mysql.createConnection({
 });
 
 
-con.connect(function (err) {
+connection.connect(function (err) {
     if (err) return console.log("failed to connect to mysql server/ database", err);
     else return console.log("connection establish with Datebase!!!!");
 });
@@ -42,4 +42,4 @@ const refreshAll = async () => {
 }
 refreshAll();
 
-module.exports = con;
+module.exports = connection;
